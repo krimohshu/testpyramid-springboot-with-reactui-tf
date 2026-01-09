@@ -1,13 +1,20 @@
-it is from web instead mobile focus , but can be run on both.    other information clarification as follows: 1. RabbitMQ  2. synchronous for first MVP 3. use existing open wordlists  4. use playwright  and bdd instead of Detox (or Appium) for e2e tests (Detox preferred for RN). Also before starting do you have any other suggestion to make to more better from QA and dev, devops perspective?# Use Maven to build the project and then run with a slim JRE
+# Multi-stage Dockerfile for building the Spring Boot app and producing a small runtime image
 FROM maven:3.8.8-eclipse-temurin-17 AS build
 WORKDIR /workspace
+
+# Copy only the files needed for a Maven build to leverage caching
 COPY pom.xml .
 COPY src ./src
+
+# Build the application (adjust -DskipTests if you want tests in CI)
 RUN mvn -B -DskipTests package
 
-FROM eclipse-temurin:17-jre-focal
-WORKDIR /app
-COPY --from=build /workspace/target/testpyramid-1.0-SNAPSHOT.jar app.jar
+# Runtime image
+FROM eclipse-temurin:17-jre
+
+# Copy the application jar from the build stage
+ARG JAR_FILE=/workspace/target/testpyramid-1.0-SNAPSHOT.jar
+COPY --from=build ${JAR_FILE} /app/app.jar
+
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/app/app.jar"]
-
