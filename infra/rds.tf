@@ -23,7 +23,7 @@ locals {
 resource "aws_db_instance" "postgres" {
   allocated_storage    = 20
   engine               = "postgres"
-  engine_version       = "15.3"
+  # Let AWS choose a supported minor version for the engine (avoid hardcoding unsupported '15.3')
   instance_class       = var.db_instance_class
   name                 = "anagramdb"
   username             = var.db_username

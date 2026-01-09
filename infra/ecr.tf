@@ -1,7 +1,3 @@
-resource "aws_ecr_repository" "app" {
-  name                 = var.ecr_repository_name
-  image_tag_mutability = "MUTABLE"
-  tags = {
-    Environment = var.environment
-  }
+data "aws_ecr_repository" "app" {
+  repository_name = var.ecr_repository_name
 }
