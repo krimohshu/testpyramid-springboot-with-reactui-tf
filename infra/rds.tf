@@ -17,7 +17,7 @@ resource "random_password" "db" {
 }
 
 locals {
-  final_db_password = length(trim(var.db_password)) > 0 ? var.db_password : random_password.db.result
+  final_db_password = length(trimspace(var.db_password)) > 0 ? var.db_password : random_password.db.result
 }
 
 resource "aws_db_instance" "postgres" {
