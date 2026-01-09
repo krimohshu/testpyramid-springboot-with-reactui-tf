@@ -5,4 +5,3 @@ output "ecr_repository_url" {
 output "db_endpoint" {
   value = aws_db_instance.postgres.endpoint
 }
-
