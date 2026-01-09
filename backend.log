@@ -1,0 +1,54 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.6)
+
+2026-01-09T01:47:10.040Z  INFO 19192 --- [           main] org.example.App                          : Starting App v1.0-SNAPSHOT using Java 17.0.17 with PID 19192 (/Users/krishanshukla/IdeaProjects/testpyramid/target/testpyramid-1.0-SNAPSHOT.jar started by krishanshukla in /Users/krishanshukla/IdeaProjects/testpyramid)
+2026-01-09T01:47:10.044Z  INFO 19192 --- [           main] org.example.App                          : No active profile set, falling back to 1 default profile: "default"
+2026-01-09T01:47:11.569Z  INFO 19192 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-09T01:47:11.672Z  INFO 19192 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 1 JPA repository interface.
+2026-01-09T01:47:12.502Z  INFO 19192 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-01-09T01:47:12.516Z  INFO 19192 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-09T01:47:12.516Z  INFO 19192 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-01-09T01:47:12.631Z  INFO 19192 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-09T01:47:12.633Z  INFO 19192 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2509 ms
+2026-01-09T01:47:12.792Z  INFO 19192 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-09T01:47:13.252Z  INFO 19192 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52c8295b
+2026-01-09T01:47:13.255Z  INFO 19192 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-09T01:47:13.272Z  INFO 19192 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/anagramdb'
+2026-01-09T01:47:13.505Z  INFO 19192 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-09T01:47:13.627Z  INFO 19192 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2026-01-09T01:47:13.631Z  INFO 19192 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2026-01-09T01:47:14.243Z  INFO 19192 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-09T01:47:16.398Z  INFO 19192 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-09T01:47:16.609Z  INFO 19192 --- [           main] t.s.e.i.AbstractInformationExtractorImpl : HHH000475: Cannot locate column information using identifier [lower((word)::text)]; ignoring index [ux_words_word]
+2026-01-09T01:47:16.612Z  INFO 19192 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-09T01:47:16.974Z  INFO 19192 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-09T01:47:17.713Z  WARN 19192 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-09T01:47:18.949Z  INFO 19192 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoint(s) beneath base path '/actuator'
+2026-01-09T01:47:19.058Z  WARN 19192 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-01-09T01:47:19.060Z  INFO 19192 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-09T01:47:19.063Z  INFO 19192 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-09T01:47:19.067Z  INFO 19192 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-09T01:47:19.069Z  INFO 19192 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-01-09T01:47:19.112Z  INFO 19192 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-09T01:47:19.147Z ERROR 19192 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

@@ -1,0 +1,14 @@
+{
+  "name": "anagram-e2e",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@cucumber/cucumber": "9.0.0",
+    "playwright": "1.36.0",
+    "axios": "1.4.0"
+  },
+  "scripts": {
+    "e2e": "cucumber-js --require ./steps --publish-quiet"
+  }
+}
+

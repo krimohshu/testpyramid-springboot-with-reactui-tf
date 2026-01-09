@@ -1,0 +1,9 @@
+{
+  "short_name": "Anagram",
+  "name": "Anagram Checker",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Anagram checker web UI"
+}
+
