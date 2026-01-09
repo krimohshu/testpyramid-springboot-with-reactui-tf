@@ -4,6 +4,22 @@ resource "aws_db_subnet_group" "default" {
   tags = { Name = "${var.ecr_repository_name}-subnets" }
 }
 
+resource "random_password" "db" {
+  length  = 16
+  special = true
+  override_special = "_@"
+  keepers = {
+    env = var.environment
+  }
+  lifecycle {
+    prevent_destroy = false
+  }
+}
+
+locals {
+  final_db_password = length(trim(var.db_password)) > 0 ? var.db_password : random_password.db.result
+}
+
 resource "aws_db_instance" "postgres" {
   allocated_storage    = 20
   engine               = "postgres"
@@ -11,7 +27,7 @@ resource "aws_db_instance" "postgres" {
   instance_class       = var.db_instance_class
   name                 = "anagramdb"
   username             = var.db_username
-  password             = var.db_password
+  password             = local.final_db_password
   skip_final_snapshot  = true
   publicly_accessible  = false
   db_subnet_group_name = aws_db_subnet_group.default.name
@@ -33,3 +49,7 @@ output "db_endpoint" {
   value = aws_db_instance.postgres.endpoint
 }
 
+output "db_password" {
+  value     = local.final_db_password
+  sensitive = true
+}

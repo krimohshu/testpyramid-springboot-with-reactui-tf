@@ -1,6 +1,6 @@
 variable "aws_region" {
   type    = string
-  default = "us-east-1"
+  default = "eu-west-2"
 }
 
 variable "environment" {
@@ -19,8 +19,8 @@ variable "db_username" {
 }
 
 variable "db_password" {
-  type    = string
-  default = "anagram"
+  type      = string
+  default   = ""
   sensitive = true
 }
 
@@ -28,4 +28,3 @@ variable "db_instance_class" {
   type    = string
   default = "db.t3.micro"
 }
-
