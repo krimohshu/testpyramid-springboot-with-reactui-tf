@@ -36,3 +36,33 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Java
+/target/
+*.class
+*.log
+
+# IDE
+/.idea/
+*.iml
+.DS_Store
+
+# Node
+/web/node_modules/
+/web/build/
+/web/.env
+
+# OS
+Thumbs.db
+
+# Maven
+.mvn/
+
+# Test output
+/target/surefire-reports/
+/target/cucumber-*.json
+/target/cucumber-report-*.html
+/target/cucumber-merged.json
+
+# local env
+.env
