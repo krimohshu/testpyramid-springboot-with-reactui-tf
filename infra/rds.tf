@@ -44,12 +44,3 @@ data "aws_subnets" "default" {
 data "aws_vpc" "default" {
   default = true
 }
-
-output "db_endpoint" {
-  value = aws_db_instance.postgres.endpoint
-}
-
-output "db_password" {
-  value     = local.final_db_password
-  sensitive = true
-}

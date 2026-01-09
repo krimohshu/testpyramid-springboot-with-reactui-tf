@@ -5,8 +5,3 @@ resource "aws_ecr_repository" "app" {
     Environment = var.environment
   }
 }
-
-output "ecr_repository_url" {
-  value = aws_ecr_repository.app.repository_url
-}
-
