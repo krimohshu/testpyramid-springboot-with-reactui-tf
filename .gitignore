@@ -66,3 +66,7 @@ Thumbs.db
 
 # local env
 .env
+
+# PID files
+*.pid
+*.pid.lock
