@@ -20,7 +20,8 @@ jobs:
           java-version: 17
 
       - name: Run Maven tests
-        run: mvn -B -DskipTests=false test
+        # Exclude UI tests (org.example.ui.*) from default CI to avoid Playwright errors when frontend isn't started.
+        run: mvn -B -DskipTests=false -Dtest='!org.example.ui.*' test
 
       - name: Upload test reports
         uses: actions/upload-artifact@v4
@@ -32,4 +33,3 @@ jobs:
             target/cucumber-1.json
             target/cucumber-2.json
             target/surefire-reports/**
-
