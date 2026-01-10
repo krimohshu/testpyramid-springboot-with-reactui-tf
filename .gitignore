@@ -72,3 +72,8 @@ Thumbs.db
 *.pid.lock
 # Ignore terraform local cache
 .terraform/
+# Git mirror artifacts
+repo-mirror.git/
+# Log files
+*.log
+run-*.log
