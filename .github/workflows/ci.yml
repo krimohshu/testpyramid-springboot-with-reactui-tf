@@ -18,18 +18,29 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+          cache: maven
 
-      - name: Run Maven tests
-        # Exclude UI tests (org.example.ui.*) from default CI to avoid Playwright errors when frontend isn't started.
-        run: mvn -B -DskipTests=false -Dtest='!org.example.ui.*' test
+      - name: Build with Maven
+        run: mvn -B clean compile
+
+      - name: Run Tests (UI tests excluded via pom.xml)
+        run: mvn -B test
+
+      - name: Package
+        run: mvn -B package -DskipTests
 
       - name: Upload test reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-reports
           path: |
-            target/cucumber-report-1.html
-            target/cucumber-report-2.html
-            target/cucumber-1.json
-            target/cucumber-2.json
+            target/cucumber-report-*.html
+            target/cucumber-*.json
             target/surefire-reports/**
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-jar
+          path: target/*.jar
