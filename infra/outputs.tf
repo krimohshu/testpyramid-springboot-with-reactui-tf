@@ -1,7 +1,3 @@
-output "ecr_repository_url" {
-  value = data.aws_ecr_repository.app.repository_url
-}
-
-output "db_endpoint" {
-  value = aws_db_instance.postgres.endpoint
-}
+# Removed duplicate outputs - now defined in their respective resource files
+# ecr.tf contains ecr_repository_url output
+# rds.tf contains db_endpoint, db_username, db_name outputs
