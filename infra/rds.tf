@@ -25,7 +25,7 @@ resource "aws_db_instance" "postgres" {
   engine               = "postgres"
   # Let AWS choose a supported minor version for the engine (avoid hardcoding unsupported '15.3')
   instance_class       = var.db_instance_class
-  name                 = "anagramdb"
+  db_name              = "anagramdb"
   username             = var.db_username
   password             = local.final_db_password
   skip_final_snapshot  = true
