@@ -1,0 +1,12 @@
+org/example/AppTest.class
+org/example/service/AnagramServiceTest.class
+org/example/bdd/CucumberTestRunner.class
+org/example/bdd/CucumberRunner2.class
+org/example/bdd/AnagramSteps.class
+org/example/bdd/AnagramSuite1.class
+org/example/bdd/AnagramBDDTest.class
+org/example/bdd/AnagramSuite2.class
+org/example/bdd/RunCucumberTest.class
+org/example/config/AbstractIntegrationTest.class
+org/example/bdd/CucumberRunner1.class
+org/example/ui/UiAnagramTest.class

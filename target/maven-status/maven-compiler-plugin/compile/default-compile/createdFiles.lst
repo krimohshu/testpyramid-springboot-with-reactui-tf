@@ -1,0 +1,9 @@
+org/example/config/DataLoader.class
+org/example/controller/DebugController.class
+org/example/importer/WordlistImportRunner.class
+org/example/service/AnagramService.class
+org/example/App.class
+org/example/model/Word.class
+org/example/controller/AnalyzeController.class
+org/example/service/AnagramService$Candidate.class
+org/example/repository/WordRepository.class
