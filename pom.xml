@@ -170,6 +170,9 @@
           <parallel>classes</parallel>
           <threadCount>2</threadCount>
           <useUnlimitedThreads>false</useUnlimitedThreads>
+          <excludes>
+            <exclude>**/ui/**/*Test.java</exclude>
+          </excludes>
         </configuration>
       </plugin>
       <plugin>

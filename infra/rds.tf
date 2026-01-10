@@ -25,6 +25,7 @@ resource "aws_db_instance" "postgres" {
   engine               = "postgres"
   # Let AWS choose a supported minor version for the engine (avoid hardcoding unsupported '15.3')
   instance_class       = var.db_instance_class
+  engine_version       = "15"
   db_name              = "anagramdb"
   username             = var.db_username
   password             = local.final_db_password
@@ -43,4 +44,16 @@ data "aws_subnets" "default" {
 
 data "aws_vpc" "default" {
   default = true
+}
+
+output "db_endpoint" {
+  value = aws_db_instance.postgres.endpoint
+}
+
+output "db_username" {
+  value = var.db_username
+}
+
+output "db_name" {
+  value = aws_db_instance.postgres.db_name
 }
